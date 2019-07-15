@@ -6,7 +6,7 @@
 ~$ docker run -d --name docker-redmine -p3000:3000 redmine
 1fe26b3929040d92ed347786f0d179641290a00ee8d52aad2a5200fdc9ba7b10
 ~~~
-docker-redmineがcontainer名になる
+docker-redmineがcontainer名になる<br>
 次回起動からは
 ~~~
 ~$ docker start docker-redmine
@@ -74,7 +74,7 @@ e812cd9b4d8d        redmine             "/docker-entrypoint.…"   31 seconds ag
 ~$ docker logs docker-redmine
 ~~~
 
-~~失敗したcontainerを簡単に修正する方法がわからないのでcontaier消して一からやり直し~~
+~~失敗したcontainerを簡単に修正する方法がわからないのでcontaier消して一からやり直し~~<br>
 起動していないcontainerにもdocker cpは可能なので再度copyする
 
 
@@ -83,7 +83,14 @@ e812cd9b4d8d        redmine             "/docker-entrypoint.…"   31 seconds ag
 ~$ docker container rm docker-redmine
 ~~~~
 
-
+## container一覧
+~~~
+~$ docker container ls -a
+~~~
+or
+~~~
+~$ docker ps -a
+~~~
 
 
 
