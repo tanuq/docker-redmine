@@ -1,10 +1,15 @@
 # docker-redmine
 
 
-## create and run container
+## イメージを指定してコンテナを作成して起動
 ~~~
 ~$ docker run -d --name docker-redmine -p3000:3000 redmine
 1fe26b3929040d92ed347786f0d179641290a00ee8d52aad2a5200fdc9ba7b10
+~~~
+docker-redmineがcontainer名になる
+次回起動からは
+~~~
+~$ docker start docker-redmine
 ~~~
 
 ## 初期admin パスワードの変更
@@ -22,7 +27,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 root@1fe26b392904:/usr/src/redmine# 
 ~~~
 
-## docker環境内にvimを追加(やらなくても可)
+## docker環境内にvimを追加(やらないほうがいいか? docker cpして編集するほうがよさそう)
 - vim入っていないので入れる
 ~~~
 root@1fe26b392904:/usr/src/redmine# apt-get update
@@ -69,10 +74,15 @@ e812cd9b4d8d        redmine             "/docker-entrypoint.…"   31 seconds ag
 ~$ docker logs docker-redmine
 ~~~
 
-失敗したcontainerを簡単に修正する方法がわからないのでcontaier消して一からやり直し
+~~失敗したcontainerを簡単に修正する方法がわからないのでcontaier消して一からやり直し~~
+起動していないcontainerにもdocker cpは可能なので再度copyする
+
+
+## container削除
 ~~~~
 ~$ docker container rm docker-redmine
 ~~~~
+
 
 
 
